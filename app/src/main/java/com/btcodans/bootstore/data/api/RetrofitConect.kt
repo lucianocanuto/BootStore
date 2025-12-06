@@ -22,4 +22,7 @@ object RetrofitConect {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+    val api: ApiRotas by lazy {
+        conexao.create(ApiRotas::class.java)
+    }
 }

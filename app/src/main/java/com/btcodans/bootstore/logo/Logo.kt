@@ -6,5 +6,5 @@ import androidx.core.text.color
 
 fun BootStoreLogo() = buildSpannedString {
     color(Color.parseColor("#feb43e")) {append("Boot")}
-    color(Color.parseColor("#724d06")) {append("Store")}
+    color(Color.parseColor("#724d06")) {append("Store✨")}
 }

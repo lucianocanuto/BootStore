@@ -5,6 +5,7 @@ import com.btcodans.bootstore.data.models.ItemCarrinho
 import com.btcodans.bootstore.data.models.Postagem
 import com.btcodans.bootstore.data.models.PostagensResponse
 import com.btcodans.bootstore.data.models.Produto
+import com.btcodans.bootstore.data.models.ProdutoDestaqueRespose
 import com.btcodans.bootstore.data.models.ProdutosResponse
 import com.btcodans.bootstore.data.models.Usuario
 import com.btcodans.bootstore.data.models.UsuariosResponse
@@ -43,4 +44,10 @@ interface ApiRotas {
 
     @GET("posts/{id}")
     suspend fun buscarPostagem(@Path("id") id: Int): Postagem
+
+
+    // ---------- PRODUTOS DESTAQUE----------
+    @GET("products?sortBy=title&order=asc")
+    suspend fun produtosDestaques(): ProdutoDestaqueRespose
+
 }
