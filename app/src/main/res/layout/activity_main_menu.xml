@@ -35,93 +35,134 @@
 
     <TextView
         android:id="@+id/txtDestaques"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/white"
         android:text="Destaques"
+        android:textAlignment="center"
         android:textColor="@color/text"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDestaques"
         android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDestaques"
-        android:clipToPadding="false"
-        android:overScrollMode="never"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDestaques" />
 
-
-    <View
-        android:id="@+id/view"
+    <LinearLayout
+        android:id="@+id/bottomBar"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="60dp"
         android:background="@color/primary"
+        android:padding="8dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtProdutos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver Produtos"
-        android:textColor="@color/text"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/txtCarrinhos"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/txtCarrinhos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carrinhos"
-        android:textColor="@color/text"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/txtUsuarios"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/txtProdutos"
-        app:layout_constraintTop_toTopOf="@+id/txtProdutos" />
+        <!-- Produtos -->
+        <LinearLayout
+            android:id="@+id/btnProdutos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtUsuarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuários"
-        android:textColor="@color/text"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/txtPostagens"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/txtCarrinhos"
-        app:layout_constraintTop_toTopOf="@+id/txtCarrinhos" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_produtos" />
 
-    <TextView
-        android:id="@+id/txtPostagens"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Postagens"
-        android:textColor="@color/text"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/txtUsuarios"
-        app:layout_constraintTop_toTopOf="@+id/txtUsuarios" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Produtos"
+                android:textColor="@color/text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Carrinhos -->
+        <LinearLayout
+            android:id="@+id/btnCarrinhos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_carrinho" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carrinhos"
+                android:textColor="@color/text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Usuários -->
+        <LinearLayout
+            android:id="@+id/btnUsuarios"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_usuarios" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuários"
+                android:textColor="@color/text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Postagens -->
+        <LinearLayout
+            android:id="@+id/btnPostagens"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_postagens" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Postagens"
+                android:textColor="@color/text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
