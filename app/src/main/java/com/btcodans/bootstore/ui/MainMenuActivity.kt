@@ -48,13 +48,41 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     private fun recyclerDestaqueSet(list: List<Produto>) {
+
+        // --- RECYCLER DE DESTAQUES ---
         binding.rvDestaques.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        val adapter = DestaqueAdapter(list) { produto ->
-            // clique do produto (abre detalhes quando você criar)
+        binding.rvDestaques.adapter = DestaqueAdapter(list) { produto ->
+            abrirDetalhes(produto)
         }
 
-        binding.rvDestaques.adapter = adapter
+
+        // --- RECYCLER DE OFERTAS ESPECIAIS ---
+        val listaOfertas = gerarOfertas(list)
+
+        binding.rvOfertas.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        binding.rvOfertas.adapter = OfertaAdapter(listaOfertas) { produto ->
+            abrirDetalhes(produto)
+        }
     }
+
+    private fun gerarOfertas(lista: List<Produto>): List<Produto> {
+        // Exemplo: pega 8 produtos e aplica desconto random de 10 a 40%
+        return lista.shuffled().take(8).map { p ->
+            val desconto = (10..40).random()
+            val precoComDesconto = p.price - (p.price * desconto / 100)
+
+            p.copy(
+                price = precoComDesconto,
+            )
+        }
+    }
+
+    private fun abrirDetalhes(produto: Produto) {
+        // implementar depois
+    }
+
 }
