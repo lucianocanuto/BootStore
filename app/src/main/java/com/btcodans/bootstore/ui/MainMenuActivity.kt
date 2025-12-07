@@ -91,15 +91,15 @@ class MainMenuActivity : AppCompatActivity() {
     private fun abrirDetalhes(produto: Produto) {
         //Eventos de click
         val intent = Intent(this, DetalhesProdutosActivity::class.java)
-            intent.putExtra("ProdutoId", produto.id)
-            intent.putExtra("ProdutoTitle", produto.title)
-            intent.putExtra("ProdutoPreco", produto.price)
-            intent.putExtra("ProdutoThumb", produto.thumbnail)
-            intent.putExtra("ProdutoDesc", produto.description)
-            intent.putExtra("ProdutoBrand", produto.brand)
-            intent.putExtra("ProdutoCat", produto.category)
-            intent.putStringArrayListExtra("ProdutoImagens", ArrayList(produto.images ?:emptyList()))
-            intent.putExtra("ProdutoRating", produto.rating)
-            startActivity(intent)
+        intent.putExtra("ProdutoId", produto.id)
+        intent.putExtra("ProdutoTitle", produto.title)
+        intent.putExtra("ProdutoPreco", produto.price)
+        intent.putExtra("ProdutoThumb", produto.thumbnail)
+        intent.putExtra("ProdutoDescricao", produto.description)
+        intent.putExtra("ProdutoBrand", produto.brand)
+        intent.putExtra("ProdutoCat", produto.category)
+        intent.putStringArrayListExtra("ProdutoImagens", ArrayList(produto.images ?:emptyList()))
+        intent.putExtra("ProdutoRating", produto.rating)
+        startActivity(intent)
         }
     }
