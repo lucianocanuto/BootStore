@@ -26,9 +26,9 @@ class OfertaAdapter(
         val produto = lista[position]
         holder.binding.apply {
             txtTitulo.text = produto.title
-            txtPrecoDesconto.text = "R$ ${produto.price}"
+            txtPrecoDesconto.text = "R$  %.2f".format(produto.price)
 
-            // preço original fictício
+            // preço original e com desconto
             val precoOriginal = produto.price + (produto.price * 0.40)
             txtPrecoOriginal.text = "R$ %.2f".format(precoOriginal)
 
