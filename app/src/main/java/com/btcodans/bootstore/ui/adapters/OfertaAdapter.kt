@@ -1,4 +1,4 @@
-package com.btcodans.bootstore.ui
+package com.btcodans.bootstore.ui.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.btcodans.bootstore.data.models.Produto
 import com.btcodans.bootstore.databinding.ItemOfertaEspecialBinding
+import com.btcodans.bootstore.ui.DetalhesProdutosActivity
 import com.bumptech.glide.Glide
-import kotlinx.coroutines.NonDisposableHandle.parent
-import kotlin.jvm.java
 
 class OfertaAdapter(
     private val lista: List<Produto>,
@@ -62,4 +61,3 @@ class OfertaAdapter(
 
     override fun getItemCount() = lista.size
 }
-

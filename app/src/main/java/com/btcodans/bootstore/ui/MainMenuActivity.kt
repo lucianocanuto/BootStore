@@ -8,6 +8,8 @@ import com.btcodans.bootstore.data.api.RetrofitConect
 import com.btcodans.bootstore.data.models.Produto
 import com.btcodans.bootstore.databinding.ActivityMainMenuBinding
 import com.btcodans.bootstore.logo.BootStoreLogo
+import com.btcodans.bootstore.ui.adapters.DestaqueAdapter
+import com.btcodans.bootstore.ui.adapters.OfertaAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

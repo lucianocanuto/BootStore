@@ -1,4 +1,4 @@
-package com.btcodans.bootstore.ui
+package com.btcodans.bootstore.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
