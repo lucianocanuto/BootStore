@@ -1,12 +1,14 @@
 package com.btcodans.bootstore.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.btcodans.bootstore.R
 import com.btcodans.bootstore.databinding.ActivityDetalhesProdutosBinding
+import com.bumptech.glide.Glide
 
 class DetalhesProdutosActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -27,6 +29,13 @@ class DetalhesProdutosActivity : AppCompatActivity() {
         val categoria = intent.getStringExtra("ProdutoCat")     ?: ""
         val imagens = intent.getIntArrayExtra("ProdutoImagens") ?: ""
         val nota = intent.getStringExtra("ProdutoRating")       ?: ""
+
+
+        Log.e("Teste","$produtoId")
+
+        Glide.with(this)
+            .load(thumb)
+            .into(binding.posterImageView)
 
 
     }
