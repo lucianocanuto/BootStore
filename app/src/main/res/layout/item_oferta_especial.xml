@@ -28,7 +28,8 @@
             android:maxLines="2"
             android:paddingTop="4dp"
             android:text="Produto"
-            android:textSize="14sp" />
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtPrecoDesconto"

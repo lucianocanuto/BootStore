@@ -28,8 +28,12 @@ class MainMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLogo.text = BootStoreLogo()
-
         carregarDestaques()
+
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+        }
+
     }
 
     private fun carregarDestaques() {

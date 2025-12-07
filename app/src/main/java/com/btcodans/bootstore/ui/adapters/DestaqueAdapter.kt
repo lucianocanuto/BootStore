@@ -14,6 +14,8 @@ class DestaqueAdapter(
 
     inner class DestaqueViewHolder(val binding: ItemDestaqueBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        //bind-> vincular
         fun bind(produto: Produto) {
             binding.txtTitulo.text = produto.title
             binding.txtPreco.text = "R$ ${produto.price}"
