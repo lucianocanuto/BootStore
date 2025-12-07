@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -84,7 +85,17 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     private fun abrirDetalhes(produto: Produto) {
-        // implementar depois
+        //Eventos de click
+        val intent = Intent(this, DetalhesProdutosActivity::class.java)
+            intent.putExtra("ProdutoId", produto.id)
+            intent.putExtra("ProdutoTitle", produto.title)
+            intent.putExtra("ProdutoPreco", produto.price)
+            intent.putExtra("ProdutoThumb", produto.thumbnail)
+            intent.putExtra("ProdutoDesc", produto.description)
+            intent.putExtra("ProdutoBrand", produto.brand)
+            intent.putExtra("ProdutoCat", produto.category)
+            intent.putStringArrayListExtra("ProdutoImagens", ArrayList(produto.images ?:emptyList()))
+            intent.putExtra("ProdutoRating", produto.rating)
+            startActivity(intent)
+        }
     }
-
-}

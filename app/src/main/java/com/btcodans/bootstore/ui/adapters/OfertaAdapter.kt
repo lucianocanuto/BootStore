@@ -41,22 +41,9 @@ class OfertaAdapter(
                 .into(imgProduto)
 
             root.setOnClickListener { onClick(produto) }
+
         }
-        //Eventos de click
-        holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, DetalhesProdutosActivity::class.java)
-            intent.putExtra("ProdutoId", produto.id)
-            intent.putExtra("ProdutoTitle", produto.title)
-            intent.putExtra("ProdutoPreco", produto.price)
-            intent.putExtra("ProdutoThumb", produto.thumbnail)
-            intent.putExtra("ProdutoDesc", produto.description)
-            intent.putExtra("ProdutoBrand", produto.brand)
-            intent.putExtra("ProdutoCat", produto.category)
-            intent.putStringArrayListExtra("ProdutoImagens", ArrayList(produto.images ?:emptyList()))
-            intent.putExtra("ProdutoRating", produto.rating)
-            context.startActivity(intent)
-        }
+
     }
 
     override fun getItemCount() = lista.size

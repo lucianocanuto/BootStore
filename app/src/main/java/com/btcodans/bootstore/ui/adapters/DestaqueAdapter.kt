@@ -30,8 +30,13 @@ class DestaqueAdapter(
             ItemDestaqueBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
 
-    override fun onBindViewHolder(holder: DestaqueViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: DestaqueViewHolder, position: Int) {
         holder.bind(produtos[position])
+
+
+
+    }
+
 
     override fun getItemCount() = produtos.size
 }
