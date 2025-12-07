@@ -74,7 +74,7 @@ class ProdutosActivity : AppCompatActivity() {
         intent.putExtra("ProdutoTitle", produto.title)
         intent.putExtra("ProdutoPreco", produto.price)
         intent.putExtra("ProdutoThumb", produto.thumbnail)
-        intent.putExtra("ProdutoDesc", produto.description)
+        intent.putExtra("ProdutoDescricao", produto.description)
         intent.putExtra("ProdutoBrand", produto.brand)
         intent.putExtra("ProdutoCat", produto.category)
         intent.putStringArrayListExtra("ProdutoImagens", ArrayList(produto.images ?:emptyList()))
