@@ -56,6 +56,7 @@ class OfertaAdapter(
             intent.putExtra("ProdutoCat", produto.category)
             intent.putStringArrayListExtra("ProdutoImagens", ArrayList(produto.images ?:emptyList()))
             intent.putExtra("ProdutoRating", produto.rating)
+            context.startActivity(intent)
         }
     }
 
