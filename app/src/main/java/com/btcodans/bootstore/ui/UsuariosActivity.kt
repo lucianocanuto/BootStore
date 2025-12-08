@@ -71,10 +71,22 @@ class UsuariosActivity : AppCompatActivity() {
             }
         }
     }
+    private fun enviarDetalhes(usuario: Usuario) {
+        //Eventos de click
+        val intent = Intent(this, DetalhesUsuariosActivity::class.java)
+        intent.putExtra("UserId", usuario.id)
+        intent.putExtra("UserNome", usuario.firstName)
+        intent.putExtra("UserSobreNome", usuario.lastName)
+        intent.putExtra("UserIdade", usuario.age)
+        intent.putExtra("Usersexo", usuario.gender)
+        intent.putExtra("UserEmail", usuario.email)
+        intent.putExtra("UserOlhos", usuario.eyeColor)
+        intent.putExtra("UserImagem", usuario.image)
+
+        startActivity(intent)
+    }
 }
 
-private fun enviarDetalhes(usuario: Usuario) {
-    TODO("Not yet implemented")
-}
+
 
 
