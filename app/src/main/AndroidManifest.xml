@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BootStore">
         <activity
+            android:name=".ui.DetalhesCarrinhosActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.CarrinhosActivity"
             android:exported="false" />
         <activity

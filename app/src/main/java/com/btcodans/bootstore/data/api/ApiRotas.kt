@@ -1,7 +1,6 @@
 package com.btcodans.bootstore.data.api
 
-import com.btcodans.bootstore.data.models.Carrinho
-import com.btcodans.bootstore.data.models.ItemCarrinho
+import com.btcodans.bootstore.data.models.CarrinhosResponse
 import com.btcodans.bootstore.data.models.Postagem
 import com.btcodans.bootstore.data.models.PostagensResponse
 import com.btcodans.bootstore.data.models.Produto
@@ -9,6 +8,7 @@ import com.btcodans.bootstore.data.models.ProdutoDestaqueRespose
 import com.btcodans.bootstore.data.models.ProdutosResponse
 import com.btcodans.bootstore.data.models.Usuario
 import com.btcodans.bootstore.data.models.UsuariosResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -24,10 +24,10 @@ interface ApiRotas {
 
     // ---------- CARRINHOS ----------
     @GET("carts")
-    suspend fun listarCarrinhos(): ItemCarrinho
+    suspend fun listarCarrinhos(): Response<CarrinhosResponse> // Usando Response para tratar erros HTTP
 
     @GET("carts/{id}")
-    suspend fun buscarCarrinho(@Path("id") id: Int): Carrinho
+    suspend fun buscarCarrinho(@Path("id") id: Int): Response<CarrinhosResponse>
 
 
     // ---------- USUÁRIOS ----------

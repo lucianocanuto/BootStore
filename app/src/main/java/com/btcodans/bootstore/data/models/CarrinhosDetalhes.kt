@@ -1,12 +1,12 @@
 package com.btcodans.bootstore.data.models
 
-data class ItemCarrinho(
+data class CarrinhosDetalhes(
     val id: Int,
     val title: String,
     val price: Double,
     val quantity: Int,
     val total: Double,
-    val thumbnail: String,
     val discountPercentage: Double,
-    val discountedTotal: Double
+    val discountedTotal: Double,
+    val thumbnail: String,
 )
