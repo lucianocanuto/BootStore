@@ -59,11 +59,8 @@ class UsuariosActivity : AppCompatActivity() {
             try {
                 val buscarUsuarios = RetrofitConect.api.listarUsuarios()
 
-                Log.d("API", "Total: ${buscarUsuarios.users}, User: ${buscarUsuarios.users.size} ")
-                Log.d("API", "Primeiro usuário: ${buscarUsuarios.users.firstOrNull()}")
-
-
                 val listaUsuario = buscarUsuarios.users
+
                 withContext(Dispatchers.Main){
                     configuraRecyclerView(listaUsuario)
                 }
