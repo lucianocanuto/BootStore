@@ -7,8 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.btcodans.bootstore.R
+import com.btcodans.bootstore.data.api.RetrofitConect
 import com.btcodans.bootstore.databinding.ActivityUsuariosBinding
 import com.btcodans.bootstore.logo.BootStoreLogo
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class UsuariosActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -36,7 +41,24 @@ class UsuariosActivity : AppCompatActivity() {
 
     }
 
-    private fun buscarUsuarios() {
+    private fun CoroutineScope.configuraRecyclerView() {
         TODO("Not yet implemented")
+    }
+
+    private fun buscarUsuarios() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val buscarUsuarios = RetrofitConect.api.listarUsuarios()
+
+                val listaUsuario = buscarUsuarios.users
+                withContext(Dispatchers.Main){
+                    configuraRecyclerView(/*listaUsuario*/)
+                }
+
+            }catch (e: Exception) {
+                e.printStackTrace()
+
+            }
+        }
     }
 }
