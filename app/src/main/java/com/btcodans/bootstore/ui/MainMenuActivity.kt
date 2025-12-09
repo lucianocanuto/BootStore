@@ -41,6 +41,10 @@ class MainMenuActivity : AppCompatActivity() {
             startActivity(Intent(this, PostagensActivity::class.java))
         }
 
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+
     }
 
     private fun carregarDestaques() {
