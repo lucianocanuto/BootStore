@@ -5,9 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ProdutosActivity"
-    android:background="@color/background">
-
+    tools:context=".ui.PostagensActivity">
     <TextView
         android:id="@+id/txtLogo"
         android:layout_width="0dp"
@@ -27,13 +25,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="Produtos disponíveis👟🛒"
-        android:textAlignment="textStart"
+        android:text="BootStore🛒   Postagens"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogo" />
-
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="0dp"
@@ -48,7 +45,7 @@
 
         <!-- Produtos -->
         <LinearLayout
-            android:id="@+id/btnHome"
+            android:id="@+id/btnProdutos"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -58,12 +55,12 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_produtos" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
+                android:text="Produtos"
                 android:textColor="@color/text"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -112,9 +109,9 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Postagens -->
+        <!-- Home -->
         <LinearLayout
-            android:id="@+id/btnPostagens"
+            android:id="@+id/btnHome"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -124,30 +121,27 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_postagens" />
+                android:src="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Postagens"
+                android:text="Home"
                 android:textColor="@color/text"
                 android:textSize="12sp" />
         </LinearLayout>
 
-
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProdutos"
+        android:id="@+id/rvPostagens"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="12dp"
         app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

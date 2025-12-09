@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +23,10 @@ class DetalhesProdutosActivity : AppCompatActivity() {
 
         binding.txtLogo.text = BootStoreLogo()
         binding.btnProdutos.setOnClickListener {
+            finish()
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this, UsuariosActivity::class.java))
             finish()
         }
 

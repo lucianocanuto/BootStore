@@ -29,7 +29,14 @@ class ProdutosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLogo.text = BootStoreLogo()
-        binding.btnHome.setOnClickListener { finish() }
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+            finish()
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+            finish()
+        }
 
 
         carregarProdutos()
