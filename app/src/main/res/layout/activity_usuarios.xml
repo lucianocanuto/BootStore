@@ -27,12 +27,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="Produtos disponíveis👟🛒"
+        android:padding="2dp"
+        android:text=" 👤 Usuarios"
         android:textAlignment="textStart"
+        android:textColor="@color/text"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogo" />
+
 
     <LinearLayout
         android:id="@+id/bottomBar"
@@ -90,9 +94,9 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Usuários -->
+        <!-- Produtos -->
         <LinearLayout
-            android:id="@+id/btnUsuarios"
+            android:id="@+id/btnProdutos"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -102,12 +106,12 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_usuarios" />
+                android:src="@drawable/ic_produtos" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usuários"
+                android:text="Produtos"
                 android:textColor="@color/text"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -138,16 +142,13 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProdutos"
+        android:id="@+id/RecyclerUser"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

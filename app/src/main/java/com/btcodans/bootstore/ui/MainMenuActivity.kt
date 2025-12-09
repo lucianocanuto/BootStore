@@ -32,6 +32,11 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.btnProdutos.setOnClickListener {
             startActivity(Intent(this, ProdutosActivity::class.java))
+
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+
         }
 
     }
