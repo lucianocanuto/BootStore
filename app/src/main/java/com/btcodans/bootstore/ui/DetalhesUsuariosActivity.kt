@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,13 @@ class DetalhesUsuariosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLogo.text = BootStoreLogo()
+        binding.btnUsuarios.setOnClickListener {
+            finish()
+        }
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+            finish()
+        }
 
 
         //Recebendo dados
@@ -30,6 +38,8 @@ class DetalhesUsuariosActivity : AppCompatActivity() {
         val Usersexo = intent.getStringExtra("Usersexo")  ?: ""
         val UserEmail = intent.getStringExtra("UserEmail")  ?: ""
         val UserOlhos = intent.getStringExtra("UserOlhos")  ?: ""
+        val UserUniversidade = intent.getStringExtra("UserUniversidade")  ?: ""
+        val UserPais = intent.getStringExtra("UserPais")  ?: ""
         val UserImagem = intent.getStringExtra("UserImagem")  ?: ""
 
 
@@ -43,6 +53,8 @@ class DetalhesUsuariosActivity : AppCompatActivity() {
         binding.textUserSexo.text = Usersexo
         binding.textUserEmail.text = UserEmail
         binding.textUserOlhos.text = UserOlhos
+        binding.textUserPais.text = UserPais
+        binding.textUserUniversidade.text = UserUniversidade
 
 
 

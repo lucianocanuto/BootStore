@@ -8,6 +8,8 @@ data class Usuario(
     val gender: String,
     val email: String,
     val eyeColor: String,
+    val university: String,
+    val ip: String,
     val image: String
 )
 

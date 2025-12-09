@@ -81,6 +81,8 @@ class UsuariosActivity : AppCompatActivity() {
         intent.putExtra("Usersexo", usuario.gender)
         intent.putExtra("UserEmail", usuario.email)
         intent.putExtra("UserOlhos", usuario.eyeColor)
+        intent.putExtra("UserUniversidade", usuario.university)
+        intent.putExtra("UserPais", usuario.ip)
         intent.putExtra("UserImagem", usuario.image)
 
         startActivity(intent)
