@@ -39,7 +39,7 @@ class PostagensAdapter(
 
             binding.root.setOnClickListener { onClick (postagem) }
         }
-        }
+    }
 
 
 }
