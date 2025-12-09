@@ -68,10 +68,10 @@ class CarrinhosActivity : AppCompatActivity() {
         }
     }
 
-    private fun abrirDetalhes(carrinho: Carrinhos) {
+    private fun abrirDetalhes(carrinhos: Carrinhos) {
         //Eventos de click
         val intent = Intent(this, DetalhesCarrinhosActivity::class.java)
-        intent.putExtra("CarrinhoId", carrinho.id)
+        intent.putExtra("Carrinhos", carrinhos)
         //intent.putExtra("CarrinhoTitle", carrinho.title)
         //intent.putExtra("CarrinhoPreco", carrinho.price)
         //intent.putExtra("CarrinhoThumb", carrinho.thumbnail)
