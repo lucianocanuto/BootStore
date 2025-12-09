@@ -36,7 +36,9 @@ class MainMenuActivity : AppCompatActivity() {
         }
         binding.btnUsuarios.setOnClickListener {
             startActivity(Intent(this,UsuariosActivity::class.java))
-
+        }
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
         }
 
     }

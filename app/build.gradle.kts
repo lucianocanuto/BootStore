@@ -53,6 +53,7 @@ dependencies {
     // Glide for images
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.androidx.recyclerview)
+    //implementation(libs.androidx.recyclerview)
 
     kapt("com.github.bumptech.glide:compiler:4.16.0")
 
