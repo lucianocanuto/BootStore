@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -61,4 +62,8 @@ class PostagensActivity : AppCompatActivity() {
     }
 }
 
-private fun PostagensActivity.enviarIdPostagem(postagem: com.btcodans.bootstore.data.models.Postagem) {}
+private fun PostagensActivity.enviarIdPostagem(postagem: Postagem) {
+    val intent = Intent(this, DetalhePostagemActivity::class.java)
+    intent.putExtra("postagem", postagem)
+    startActivity(intent)
+}
