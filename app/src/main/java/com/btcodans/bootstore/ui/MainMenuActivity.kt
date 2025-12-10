@@ -45,6 +45,7 @@ class MainMenuActivity : AppCompatActivity() {
             startActivity(Intent(this, CarrinhosActivity::class.java))
         }
 
+
     }
 
     private fun carregarDestaques() {

@@ -28,7 +28,22 @@ class CarrinhosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLogo.text = BootStoreLogo()
-        binding.btnHome.setOnClickListener { finish() }
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
+        }
+
+
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+
+        }
 
         carregarCarrinhos()
 

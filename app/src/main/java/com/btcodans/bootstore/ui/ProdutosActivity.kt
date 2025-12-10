@@ -30,14 +30,24 @@ class ProdutosActivity : AppCompatActivity() {
 
         binding.txtLogo.text = BootStoreLogo()
         binding.btnHome.setOnClickListener {
-            startActivity(Intent(this, MainMenuActivity::class.java))
-            finish()
-        }
-        binding.btnUsuarios.setOnClickListener {
-            startActivity(Intent(this,UsuariosActivity::class.java))
-            finish()
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
         }
 
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
+        }
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+
+        }
 
         carregarProdutos()
 

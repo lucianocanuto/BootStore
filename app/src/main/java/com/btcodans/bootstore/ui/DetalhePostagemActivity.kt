@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,23 @@ class DetalhePostagemActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
         binding.txtLogo.text = BootStoreLogo()
+
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+
+        }
 
         val postagem = intent.getParcelableExtra<Postagem>("postagem")
 

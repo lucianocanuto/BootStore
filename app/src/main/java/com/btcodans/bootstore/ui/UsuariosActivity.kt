@@ -35,11 +35,19 @@ class UsuariosActivity : AppCompatActivity() {
 
         binding.btnProdutos.setOnClickListener {
             startActivity(Intent(this, ProdutosActivity::class.java))
-            finish()
+
+        }
+
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
+        }
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
         }
         binding.btnHome.setOnClickListener {
             startActivity(Intent(this, MainMenuActivity::class.java))
-            finish()
+
         }
 
 

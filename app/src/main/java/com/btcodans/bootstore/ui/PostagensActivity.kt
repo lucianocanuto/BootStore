@@ -31,7 +31,24 @@ class PostagensActivity : AppCompatActivity() {
         carregarPostagens()
 
 
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+
+        }
     }
+
 
     private fun configuraRecylerView(list : List<Postagem>) {
         binding.rvPostagens.layoutManager =

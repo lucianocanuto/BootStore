@@ -21,13 +21,21 @@ class DetalhesUsuariosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLogo.text = BootStoreLogo()
-        binding.btnUsuarios.setOnClickListener {
-            finish()
-        }
         binding.btnProdutos.setOnClickListener {
             startActivity(Intent(this, ProdutosActivity::class.java))
-            finish()
+
         }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
+        }
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+
 
 
         //Recebendo dados
