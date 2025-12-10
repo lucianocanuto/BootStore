@@ -21,7 +21,7 @@
             android:layout_height="200dp"
             android:background="@color/white"
             android:padding="4dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="center" />
 
 
         <TextView
