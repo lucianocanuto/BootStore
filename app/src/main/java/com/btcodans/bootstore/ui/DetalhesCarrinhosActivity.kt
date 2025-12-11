@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -23,7 +24,22 @@ class DetalhesCarrinhosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLogo.text = BootStoreLogo()
-        binding.btnHome.setOnClickListener { finish() }
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
+        }
+
+
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+
+        }
 
         val carrinho: Carrinhos? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra("Carrinhos", Carrinhos::class.java)

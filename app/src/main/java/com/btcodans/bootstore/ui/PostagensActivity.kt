@@ -1,5 +1,6 @@
 package com.btcodans.bootstore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,24 @@ class PostagensActivity : AppCompatActivity() {
         carregarPostagens()
 
 
+        binding.btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
+        }
+        binding.btnUsuarios.setOnClickListener {
+            startActivity(Intent(this,UsuariosActivity::class.java))
+        }
+
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+
+        }
     }
+
 
     private fun configuraRecylerView(list : List<Postagem>) {
         binding.rvPostagens.layoutManager =
@@ -61,4 +79,8 @@ class PostagensActivity : AppCompatActivity() {
     }
 }
 
-private fun PostagensActivity.enviarIdPostagem(postagem: com.btcodans.bootstore.data.models.Postagem) {}
+private fun PostagensActivity.enviarIdPostagem(postagem: Postagem) {
+    val intent = Intent(this, DetalhePostagemActivity::class.java)
+    intent.putExtra("postagem", postagem)
+    startActivity(intent)
+}

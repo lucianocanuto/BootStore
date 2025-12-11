@@ -13,16 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BootStore">
-
+        <activity
+            android:name=".ui.DetalhePostagemActivity"
+            android:exported="false" />
         <!-- feature/carrinhos -->
         <activity
             android:name=".ui.DetalhesCarrinhosActivity"
             android:exported="false" />
         <activity
             android:name=".ui.CarrinhosActivity"
-            android:exported="false" />
-
-        <!-- master -->
+            android:exported="false" /> <!-- master -->
         <activity
             android:name=".ui.PostagensActivity"
             android:exported="false" />
@@ -31,9 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.UsuariosActivity"
-            android:exported="false" />
-
-        <!-- comum às branches -->
+            android:exported="false" /> <!-- comum às branches -->
         <activity
             android:name=".ui.ProdutosActivity"
             android:exported="false" />
@@ -46,18 +44,16 @@
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

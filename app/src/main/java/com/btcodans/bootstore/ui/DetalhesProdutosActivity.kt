@@ -23,12 +23,20 @@ class DetalhesProdutosActivity : AppCompatActivity() {
 
         binding.txtLogo.text = BootStoreLogo()
         binding.btnProdutos.setOnClickListener {
-            finish()
+            startActivity(Intent(this, ProdutosActivity::class.java))
+
         }
         binding.btnUsuarios.setOnClickListener {
-            startActivity(Intent(this, UsuariosActivity::class.java))
-            finish()
+            startActivity(Intent(this,UsuariosActivity::class.java))
         }
+        binding.btnPostagens.setOnClickListener {
+            startActivity(Intent(this, PostagensActivity::class.java))
+        }
+
+        binding.btnCarrinhos.setOnClickListener {
+            startActivity(Intent(this, CarrinhosActivity::class.java))
+        }
+
 
         // Receber dados da MainActivity
         val produtoId = intent.getIntExtra("ProdutoId", 0)
