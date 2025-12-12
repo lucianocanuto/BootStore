@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
 import com.btcodans.bootstore.data.api.RetrofitConect
 import com.btcodans.bootstore.data.models.Produto
 import com.btcodans.bootstore.databinding.ActivityMainMenuBinding
@@ -76,17 +77,49 @@ class MainMenuActivity : AppCompatActivity() {
             abrirDetalhes(produto)
         }
 
-
-        // --- RECYCLER DE OFERTAS ESPECIAIS ---
+        // --- CARROSSEL DE OFERTAS ---
         val listaOfertas = gerarOfertas(list)
 
-        binding.rvOfertas.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        binding.rvOfertas.adapter = OfertaAdapter(listaOfertas) { produto ->
+        binding.vpOfertas.adapter = OfertaAdapter(listaOfertas) { produto ->
             abrirDetalhes(produto)
         }
+
+        binding.vpOfertas.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.vpOfertas.offscreenPageLimit = 3
+
+        val offset = 60
+
+        binding.vpOfertas.setPageTransformer { page, position ->
+            page.translationX = -offset * position
+            page.scaleY = 0.85f + (1 - kotlin.math.abs(position)) * 0.15f
+            page.alpha = 0.7f + (1 - kotlin.math.abs(position)) * 0.3f
+        }
+
+
+        // --------------------------------------------------------
+        // -------------------- AUTO PLAY --------------------------
+        // --------------------------------------------------------
+
+        val handler = android.os.Handler(mainLooper)
+
+        val runnable = object : Runnable {
+            override fun run() {
+
+                val current = binding.vpOfertas.currentItem
+                val total = listaOfertas.size
+
+                val next = if (current == total - 1) 0 else current + 1
+
+                binding.vpOfertas.setCurrentItem(next, true)
+
+                handler.postDelayed(this, 3000) // 3 segundos
+            }
+        }
+
+        handler.postDelayed(runnable, 3000)
     }
+
+
 
     private fun gerarOfertas(lista: List<Produto>): List<Produto> {
         // Exemplo: pega 8 produtos e aplica desconto random de 10 a 40%
