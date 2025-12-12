@@ -12,6 +12,7 @@ import com.btcodans.bootstore.databinding.ActivityMainMenuBinding
 import com.btcodans.bootstore.logo.BootStoreLogo
 import com.btcodans.bootstore.ui.adapters.DestaqueAdapter
 import com.btcodans.bootstore.ui.adapters.OfertaAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -118,6 +119,8 @@ class MainMenuActivity : AppCompatActivity() {
 
         handler.postDelayed(runnable, 3000)
     }
+
+
 
 
 

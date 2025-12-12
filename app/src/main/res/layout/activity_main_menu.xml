@@ -33,12 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogo" />
 
+
     <TextView
         android:id="@+id/txtDestaques"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@color/white"
+        android:background="@color/primary"
         android:padding="8dp"
         android:text="👉Destaques"
         android:textAlignment="textStart"
@@ -46,20 +46,21 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
-
+        app:layout_constraintTop_toBottomOf="@+id/vpOfertas" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDestaques"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/white"
         android:clipToPadding="false"
         android:overScrollMode="never"
         android:paddingStart="16dp"
+        android:paddingTop="16dp"
         android:paddingEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,8 +70,8 @@
         android:id="@+id/txtOfertas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:background="@color/primary"
         android:padding="8dp"
         android:text="🔥 Ofertas Especiais"
         android:textColor="@color/text"
@@ -79,29 +80,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvDestaques" />
-    
-    
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpOfertas"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="300dp"
+        android:background="@color/background"
         android:clipToPadding="false"
+        android:overScrollMode="never"
         android:paddingStart="32dp"
         android:paddingEnd="32dp"
-        android:overScrollMode="never"
         app:layout_constraintTop_toBottomOf="@+id/txtOfertas" />
 
 
-    <!--<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvOfertas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:overScrollMode="never"
-        android:paddingBottom="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtOfertas"
-        tools:layout_editor_absoluteX="0dp" />-->
 
     <LinearLayout
         android:id="@+id/bottomBar"
